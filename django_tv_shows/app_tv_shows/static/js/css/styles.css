@@ -1,0 +1,12 @@
+* {
+    outline: 1px dotted yellowgreen;
+    margin: 0px;
+    padding: 0px; 
+}   
+
+
+html,
+body,
+.container-fluid {
+    height: 100%;
+}
