@@ -36,19 +36,21 @@ def new(request):
 
 def edit(request, id):
     show_id = Show.objects.get(id=int(id))
+    print(request.POST)
 
     if request.method == 'POST':
-        print(request.POST)
-        for campo in request.POST.keys:
-            if request.POST[campo] == '':
-                print(vars(show_id)[campo])
-                request.POST[campo] = vars(show_id)[campo]
+        
+        if request.POST['title'] != '':
+            show_id.title = request.POST['title']
+        if request.POST['network'] != '':
+            show_id.network = request.POST['network']
+        if request.POST['release_date'] != '':
+            show_id.release_date = request.POST['release_date']
+        if request.POST['description'] != '':
+            show_id.description = request.POST['description']
+        show_id.save()
 
-        show_new = Show.objects.create(title=request.POST['title'], network=request.POST['network'], 
-                                        release_date=request.POST['release_date'], description=request.POST['description'])
-        show_new.save()
-
-        return redirect(f"/shows/{show_new.id}")
+        return redirect(f"/shows/{show_id.id}")
 
     context = {'show': show_id}
 
