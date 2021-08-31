@@ -25,13 +25,13 @@
     <div class="col-md-3">
       <div class="input-group">
           <span class="input-group-text" id="basic-addon3">Network</span>
-          <input type='text' class="form-control" aria-label="basic-addon3" name='network' placeholder="{{show.network}}"></input>
+          <input type='text' class="form-control" aria-label="basic-addon3" name='network' value="{{show.network}}" placeholder="{{show.network}}"></input>
       </div>
     </div>
     <div class="col-md-3">
       <div class="input-group">
-        <label for="startDate" class="input-group-text">Start</label>
-        <input id="startDate" class="form-control" type="date" name='release_date' placeholder="{{show.release_date}}"/>
+        <label for="startDate" class="input-group-text">Release Date</label>
+        <input id="startDate" class="form-control" type="date" name='release_date' value="{{show.release_date|date:"d-m-Y"}}" placeholder="{{show.release_date|date:"d-m-Y"}}"/>
         <span id="startDateSelected"></span>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="col-md-6">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon3">Description</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='description' placeholder="{{show.description}}">
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='description' value="{{show.description}}" placeholder="{{show.description}}">
       </div>
     </div>
   </div>

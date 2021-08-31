@@ -16,7 +16,7 @@
     <div class="col-md-6">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon3">Title</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='title'>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='title' value="{{request.session.show_title}}">
       </div>
     </div>
   </div>
@@ -25,13 +25,13 @@
     <div class="col-md-3">
       <div class="input-group">
           <span class="input-group-text" id="basic-addon3">Network</span>
-          <input type='text' class="form-control" aria-label="basic-addon3" name='network'></input>
+          <input type='text' class="form-control" aria-label="basic-addon3" name='network' value="{{request.session.show_network}}"></input>
       </div>
     </div>
     <div class="col-md-3">
       <div class="input-group">
-        <label for="startDate" class="input-group-text">Start</label>
-        <input id="startDate" class="form-control" type="date" name='release_date'/>
+        <label for="startDate" class="input-group-text">Release Date</label>
+        <input id="startDate" class="form-control" type="date" name='release_date' value="{{request.session.show_release_date|date:"d-m-Y"}}"/>
         <span id="startDateSelected"></span>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="col-md-6">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon3">Description</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='description'>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='description' value="{{request.session.show_description}}">
       </div>
     </div>
   </div>
