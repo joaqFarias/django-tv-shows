@@ -4,6 +4,61 @@
 
 {% block contenido %}
 
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6 py-5">
+        <h1>TV Show {{show.id}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <b>Title:</b> 
+    </div>
+    <div class="col-md-3">{{show.title}}</div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-3"> 
+    <b>Network:</b> 
+    </div>
+    <div class="col-md-3">{{show.network}}</div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <b>Release Date:</b>
+    </div>
+    <div class="col-md-3">
+        {{show.release_date}}
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <b>Description:</b>
+    </div>
+    <div class="col-md-3 ps-5">
+        {{show.description}}
+    </div>
+</div>
+
+<div class="row mt-5 pt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        Last Updated:
+    </div>
+    <div class="col-md-3">
+        {{show.updated_at}}
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+    <a class="btn btn-warning" href="/shows/{{show.id}}/edit" role="button">Edit</a>
+    <a class="btn btn-danger" href="/shows/{{show.id}}/delete" role="button">Delete</a>
+    </div>
+</div>
 
 {% endblock %}
 

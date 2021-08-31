@@ -4,6 +4,54 @@
 
 {% block contenido %}
 
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-6 py-5">
+      <h1>Edit Show {{show.id}}</h1>
+  </div>
+</div>  
+<form action="/shows/new" method="post">{% csrf_token %}
+  <div class="row mb-3"> 
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">Title</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='title' placeholder={{show.title}} aria-label={{show.title}}>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+      <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Network</span>
+          <input type='text' class="form-control" aria-label="basic-addon3" name='network' placeholder={{show.network}} aria-label={{show.network}}></input>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <label for="startDate" class="input-group-text">Start</label>
+        <input id="startDate" class="form-control" type="date" name='release_date' placeholder={{show.release_date}}/>
+        <span id="startDateSelected"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3"> 
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon3">Description</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='description' placeholder={{show.description}}>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-3 ps-5 ms-5">
+              <button type="submit" class="btn btn-success">Update</button>
+      </div>
+  </div>
+</form> 
 
 {% endblock %}
 
